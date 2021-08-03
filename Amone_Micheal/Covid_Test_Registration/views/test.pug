@@ -1,0 +1,89 @@
+doctype html
+html
+    head
+        link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+        link(rel="stylesheet" type="text/css" href="/test.css")
+        title= title
+
+    body
+        div.b_image(style="background:url('images/form-header-image.png');background-size: cover;" )
+            
+        form.container-fluid(method="POST" action="/" id="testCovid" name="testCovid")
+            
+            div.col-lg-10.offset-md-1
+                h4 Ministry of Health
+                h1 COVID 19(CORONA VIRUS)
+                h4 Virus-Test Registration Form 
+                
+                if alert =='success'
+                    div.alert.alert-success Registration successfull
+                if alert =='error'
+                    div.alert.alert-danger An error occured, failed to register
+                
+                div.row
+                    div.col
+                        div.form-field
+                            label Surname
+                            input( type="text" name="surname" id="surname")
+                            small
+
+                    div.col
+                        div.form-field
+                            label Given Name
+                            input( type="text" name="givenName" id="givenName")
+                            small
+                div.row
+                    div.col
+                        div.form-field
+                            label Date of Birth
+                            input(name="dob" id="dob" min="1871-08-01" max="2020-08-01" type="date") 
+                            small
+                
+                    div.col
+                        label Place of Residence
+                        div.form-field
+                            input(type="text" name="residence" id="residence")
+                            small
+                div.row
+                    div.col
+                        label Occupation
+                        div.form-field
+                            input(type="text" name="occupation" id="occupation")
+                            small
+                    div.col
+                        div.form-field 
+                            label Nationality
+                            input(type="text" name="nationality" id="nationality")
+                            small
+
+                h5(style="margin-bottom:-10px; margin-top:20px;") Gender
+                hr
+                div(style="margin-top:-10px;")
+                    div.form-check
+                        input(class="form-check-input" type="radio" value="male" name="gender" id="gender" checked)
+                        h6(class="form-check-label") Male
+                    div.form-check(style="margin-left: 70px;")
+                        input(class="form-check-input" type="radio" value="female" name="gender" id="gender")
+                        h6(class="form-check-label") Female
+
+                div.form-row(style="margin-top:50px;")
+                        div.col.form-group
+                            label Category
+                            select(name="category" id="category")
+                                option(value="none" selected disabled hidden) --Select Category--
+                                option Returnee
+                                option Contact
+                                option Alert
+                                option Volunteer
+                            small
+                div.form-row(style="margin-bottom:10px;")
+                    div.col.form-group
+                        button.btn.btn-primary(type="submit") Register
+        script(src="validation.js")                 
+
+
+
+
+
+
+

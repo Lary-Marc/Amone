@@ -1,0 +1,7 @@
+Amone_Micheal/Covid_Test_Registration/node_modules/
+
+.env
+package-lock.json
+.vscode
+
+package.json
